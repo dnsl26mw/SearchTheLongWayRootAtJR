@@ -8,6 +8,9 @@ use App\Http\Controllers\UserController;
 Route::get('/top', [SearchController::class, 'showTop'])
 ->name('top');
 
+Route::get('/routelist', [SearchController::class, 'searchRoute'])
+->name('routelist');
+
 Route::get('/login', [AuthController::class, 'showLogin'])
 ->name('login');
 
