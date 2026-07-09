@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('adjacent_stations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('from_station_id')->constrained('stations');
+            $table->foreignId('to_station_id')->constrained('stations');
+            $table->foreignId('line_id')->constrained('lines');
+            $table->decimal('distance', 5, 1);
         });
     }
 

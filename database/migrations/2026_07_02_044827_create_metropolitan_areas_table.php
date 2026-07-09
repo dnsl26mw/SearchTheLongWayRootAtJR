@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('metoropolitan_areas', function (Blueprint $table) {
+        Schema::create('metropolitan_areas', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('metropolitan_name');
         });
     }
 
@@ -22,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('metoropolitan_areas');
+        Schema::dropIfExists('metropolitan_areas');
     }
 };

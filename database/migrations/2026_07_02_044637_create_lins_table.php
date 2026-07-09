@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('lines', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('line_cd')->unique();
+            $table->string('line_name');
         });
     }
 

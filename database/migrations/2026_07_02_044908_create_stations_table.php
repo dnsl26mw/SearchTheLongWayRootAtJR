@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('stations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('station_cd')->unique();
+            $table->string('station_g_cd');
+            $table->string('station_name');
+            $table->foreignId('line_id')->constrained('lines');
+            $table->foreignId('metropolitan_area_id')->nullable()->constrained('metropolitan_areas');
+            $table->integer('e_sort');
         });
     }
 
