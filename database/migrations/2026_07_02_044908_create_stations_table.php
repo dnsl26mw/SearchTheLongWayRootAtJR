@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('station_g_cd');
             $table->string('station_name');
             $table->foreignId('line_id')->constrained('lines');
+            $table->foreignId('prefecture_id')->constrained('prefectures');
             $table->foreignId('metropolitan_area_id')->nullable()->constrained('metropolitan_areas');
             $table->integer('e_sort');
         });
